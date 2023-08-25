@@ -1,29 +1,6 @@
 class Book {
   constructor() {
-    this.bookTitle = document.getElementById('book-title');
-    this.bookAuthor = document.getElementById('book-author');
-    this.addBtn = document.getElementById('btn');
-    this.listEntry = document.getElementById('list-entry');
-    this.listLink = document.querySelector('#bk-list');
-    this.addLink = document.querySelector('#bk-add');
-    this.listContact = document.querySelector('#bk-contact');
-    this.sectionList = document.querySelector('#list');
-    this.sectionNew = document.querySelector('#new');
-    this.sectionContact = document.querySelector('#contact');
-    this.showDate = document.querySelector('.show-date');
-
-    this.now = new Date();
-    this.month = this.now.toLocaleString('default', { month: 'long' });
-    this.date = this.now.getDate();
-    this.year = this.now.getFullYear();
-    this.hour24 = this.now.getHours();
-    this.hour12 = this.hour24 % 12 || 12;
-    this.min = this.now.getMinutes();
-    this.sec = this.now.getSeconds();
-    this.dateTime = '';
-
-    this.showDateTime();
-    this.showDate.innerText = this.dateTime;
+    this.selectElements();
 
     this.books = JSON.parse(localStorage.getItem('books')) || [];
 
@@ -36,6 +13,20 @@ class Book {
     );
 
     this.renderBooks();
+  }
+
+  selectElements() {
+    this.bookTitle = document.querySelector('#book-title');
+    this.bookAuthor = document.querySelector('#book-author');
+    this.addBtn = document.querySelector('#btn');
+    this.listEntry = document.querySelector('#list-entry');
+    this.listLink = document.querySelector('#bk-list');
+    this.addLink = document.querySelector('#bk-add');
+    this.listContact = document.querySelector('#bk-contact');
+    this.sectionList = document.querySelector('#list');
+    this.sectionNew = document.querySelector('#new');
+    this.sectionContact = document.querySelector('#contact');
+    this.showDate = document.querySelector('.show-date');
   }
 
   addBook() {
@@ -116,27 +107,6 @@ class Book {
     this.sectionList.classList.add('hidden');
     this.sectionNew.classList.add('hidden');
     this.sectionContact.classList.remove('hidden');
-  }
-
-  nth(date) {
-    if (date > 3 && this.date < 21) return 'th';
-    switch (date % 10) {
-      case 1:
-        return 'st';
-      case 2:
-        return 'nd';
-      case 3:
-        return 'rd';
-      default:
-        return 'th';
-    }
-  }
-
-  showDateTime() {
-    this.nth();
-    this.dateTime = `${this.month} ${this.date}${this.nth(this.date)} ${
-      this.year
-    }, ${this.hour12}:${this.min}:${this.sec}${this.hour24 < 12 ? 'am' : 'pm'}`;
   }
 }
 
