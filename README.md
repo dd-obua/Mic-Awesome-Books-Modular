@@ -126,13 +126,13 @@ To run tests, run the following command:
 - For CSS
 
 ```sh
-  npx hint .
+  npx stylelint "**/*.{css,scss}"
 ```
 
 - For JavaScript
 
 ```sh
-  npx hint .
+  npx eslint .
 ```
 
 ### Deployment
