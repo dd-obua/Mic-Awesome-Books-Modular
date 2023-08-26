@@ -139,9 +139,7 @@ To run tests, run the following command:
 
 You can deploy this project using:
 
-
 - The project has been deployed using github pages.
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
