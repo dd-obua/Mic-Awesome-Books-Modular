@@ -2,19 +2,6 @@ export default class Book {
   constructor() {
     this.selectElements();
 
-    this.now = new Date();
-    this.month = this.now.toLocaleString('default', { month: 'long' });
-    this.date = this.now.getDate();
-    this.year = this.now.getFullYear();
-    this.hour24 = this.now.getHours();
-    this.hour12 = this.hour24 % 12 || 12;
-    this.min = this.now.getMinutes();
-    this.sec = this.now.getSeconds();
-    this.dateTime = '';
-
-    this.showDateTime();
-    this.showDate.innerText = this.dateTime;
-
     this.books = JSON.parse(localStorage.getItem('books')) || [];
 
     this.addBtn.addEventListener('click', this.addBook.bind(this));
@@ -120,26 +107,5 @@ export default class Book {
     this.sectionList.classList.add('hidden');
     this.sectionNew.classList.add('hidden');
     this.sectionContact.classList.remove('hidden');
-  }
-
-  nth(date) {
-    if (date > 3 && this.date < 21) return 'th';
-    switch (date % 10) {
-      case 1:
-        return 'st';
-      case 2:
-        return 'nd';
-      case 3:
-        return 'rd';
-      default:
-        return 'th';
-    }
-  }
-
-  showDateTime() {
-    this.nth();
-    this.dateTime = `${this.month} ${this.date}${this.nth(this.date)} ${
-      this.year
-    }, ${this.hour12}:${this.min}:${this.sec}${this.hour24 < 12 ? 'am' : 'pm'}`;
   }
 }
