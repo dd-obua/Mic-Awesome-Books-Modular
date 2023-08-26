@@ -85,20 +85,17 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-Example command:
-
-```sh
- 1. A code editor,
- 2. GIT, and
- 3. Any modern browser
-```
+- A code editor,
+- GIT, and
+- Any modern browser
 
 ### Setup
 
 Clone this repository to your desired folder:
 
+- cd your-folder
+
 ```sh
-  cd your-folder
   git clone https://github.com/dd-obua/Mic-Awesome-Books-Modular.git
 ```
 
@@ -114,9 +111,7 @@ Install this project with:
 
 To run the project, execute the following command:
 
-```sh
-  Open the index.html file with live-server
-```
+- Open the index.html file with live-server
 
 ### Run tests
 
@@ -144,9 +139,9 @@ To run tests, run the following command:
 
 You can deploy this project using:
 
-```sh
-The project has been deployed using github pages.
-```
+
+- The project has been deployed using github pages.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
