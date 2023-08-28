@@ -9,7 +9,7 @@ export default class Book {
     this.listLink.addEventListener('click', this.displayBookList.bind(this));
     this.listContact.addEventListener(
       'click',
-      this.displayContactInfo.bind(this)
+      this.displayContactInfo.bind(this),
     );
 
     this.renderBooks();
@@ -36,7 +36,7 @@ export default class Book {
     if (title.length > 0 && author.length > 0) {
       const book = { title, author };
       const same = this.books.some(
-        bk => JSON.stringify(bk) === JSON.stringify(book)
+        (bk) => JSON.stringify(bk) === JSON.stringify(book),
       );
       if (!same) {
         this.books.push(book);
@@ -53,7 +53,7 @@ export default class Book {
 
   removeBook(title, author) {
     this.books = this.books.filter(
-      book => book.title !== title && book.author !== author
+      (book) => book.title !== title && book.author !== author,
     );
     this.updateStorage();
     this.renderBooks();
@@ -67,7 +67,7 @@ export default class Book {
   renderBooks() {
     this.listEntry.innerHTML = this.books
       .map(
-        book => `
+        (book) => `
           <li class="book-card">
             <p class="entry">
               <span class="book-title">"${book.title}"</span> by
@@ -75,14 +75,14 @@ export default class Book {
             </p>
             <button class="remove-btn">Remove</button>
           </li>
-        `
+        `,
       )
       .join('');
 
     const removeBtns = document.querySelectorAll('.remove-btn');
 
-    removeBtns.forEach(btn => {
-      btn.addEventListener('click', e => {
+    removeBtns.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
         const card = e.target.closest('.book-card');
         const title = card.querySelector('.book-title').innerText;
         const author = card.querySelector('.book-author').innerText;
@@ -107,5 +107,5 @@ export default class Book {
     this.sectionList.classList.add('hidden');
     this.sectionNew.classList.add('hidden');
     this.sectionContact.classList.remove('hidden');
-  }
+  } 
 }
