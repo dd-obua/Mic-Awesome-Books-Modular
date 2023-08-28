@@ -1,6 +1,6 @@
 import { DateTime } from './luxon.js';
 
-export const showClock = () => {
+const showClock = () => {
   const now = DateTime.local();
   const formattedDate = now.toFormat("LLL d' 'yyyy, h:mm:ss a");
 
@@ -9,8 +9,4 @@ export const showClock = () => {
   showDate.textContent = formattedDate;
 };
 
-// Call the function initially
-showClock();
-
-// Update the clock and HTML element's content every second
-setInterval(showClock, 1000);
+export default showClock;
