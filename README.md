@@ -69,8 +69,6 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
-
 - [Live Demo Link](https://dd-obua.github.io/Mic-Awesome-Books-Modular/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -146,8 +144,6 @@ You can deploy this project using:
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
-
-> Mention all of the collaborators of this project.
 
 <!-- AUTHORS -->
 
