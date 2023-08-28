@@ -107,5 +107,5 @@ export default class Book {
     this.sectionList.classList.add('hidden');
     this.sectionNew.classList.add('hidden');
     this.sectionContact.classList.remove('hidden');
-  } 
+  }
 }
