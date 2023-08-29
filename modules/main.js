@@ -17,7 +17,7 @@ const clearInputs = () => {
 const renderBooks = () => {
   listEntry.innerHTML = books
     .map(
-      book => `
+      (book) => `
           <li class="book-card">
             <p class="entry">
               <span class="book-title">"${book.title}"</span> by
@@ -25,20 +25,20 @@ const renderBooks = () => {
             </p>
             <button class="remove-btn">Remove</button>
           </li>
-        `
+        `,
     )
     .join('');
 
   const removeBtns = document.querySelectorAll('.remove-btn');
-  removeBtns.forEach(btn => {
-    btn.addEventListener('click', e => {
+  removeBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
       const card = e.target.closest('.book-card');
       const title = card.querySelector('.book-title').innerText;
       const author = card.querySelector('.book-author').innerText;
 
       // Remove book
       books = books.filter(
-        book => book.title !== title && book.author !== author
+        (book) => book.title !== title && book.author !== author,
       );
       updateStorage();
       renderBooks();
@@ -53,7 +53,7 @@ const addBook = () => {
 
   if (title.length > 0 && author.length > 0) {
     const book = { title, author };
-    const same = books.some(bk => JSON.stringify(bk) === JSON.stringify(book));
+    const same = books.some((bk) => JSON.stringify(bk) === JSON.stringify(book));
     if (!same) {
       books.push(book);
       updateStorage();
