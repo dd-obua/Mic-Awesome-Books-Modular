@@ -2,16 +2,16 @@ import showClock from './modules/date-time.js';
 import { books } from './modules/main.js';
 import { renderBooks, addBook } from './modules/main.js';
 import {
-  addToList,
-  displayBookList,
-  displayContactInfo,
-} from './modules/toggle-display.js';
-import {
   addLink,
   listLink,
   contactLink,
   addBtn,
 } from './modules/select-elements.js';
+import {
+  addToList,
+  displayBookList,
+  displayContactInfo,
+} from './modules/toggle-display.js';
 
 // Show clock
 showClock(); // Show clock initially

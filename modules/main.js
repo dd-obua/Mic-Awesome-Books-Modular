@@ -49,7 +49,6 @@ const renderBooks = () => {
     .join('');
 
   const removeBtns = document.querySelectorAll('.remove-btn');
-
   removeBtns.forEach(btn => {
     btn.addEventListener('click', e => {
       const card = e.target.closest('.book-card');
