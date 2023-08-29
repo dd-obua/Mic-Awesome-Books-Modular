@@ -1,6 +1,6 @@
 import { bookTitle, bookAuthor, listEntry } from './select-elements.js';
 
-export let books = JSON.parse(localStorage.getItem('books')) || [];
+let books = JSON.parse(localStorage.getItem('books')) || [];
 
 // Update storage
 const updateStorage = () => {
