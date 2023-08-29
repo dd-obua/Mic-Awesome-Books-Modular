@@ -1,16 +1,4 @@
-import {
-  bookTitle,
-  bookAuthor,
-  addBtn,
-  listEntry,
-  listLink,
-  addLink,
-  contactLink,
-  sectionList,
-  sectionNew,
-  sectionContact,
-  showDate,
-} from './select-elements.js';
+import { bookTitle, bookAuthor, listEntry } from './select-elements.js';
 
 export let books = JSON.parse(localStorage.getItem('books')) || [];
 

@@ -1,6 +1,5 @@
 import showClock from './modules/date-time.js';
-import { books } from './modules/main.js';
-import { renderBooks, addBook } from './modules/main.js';
+import { books, renderBooks, addBook } from './modules/main.js';
 import {
   addLink,
   listLink,

@@ -11,7 +11,7 @@ const displayBookList = () => {
   sectionList.classList.remove('hidden');
   sectionNew.classList.add('hidden');
   sectionContact.classList.add('hidden');
-};  
+};
 
 const displayContactInfo = () => {
   sectionList.classList.add('hidden');
