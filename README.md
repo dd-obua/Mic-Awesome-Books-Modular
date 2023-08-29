@@ -145,10 +145,6 @@ You can deploy this project using:
 
 ## 👥 Authors <a name="authors"></a>
 
-<!-- AUTHORS -->
-
-## 👥 Authors <a name="authors"></a>
-
 👤 **Author**
 
 - GitHub: [dd-obua](https://github.com/dd-obua/)
