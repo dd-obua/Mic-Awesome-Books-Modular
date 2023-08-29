@@ -1,11 +1,30 @@
-import Book from './modules/book.js';
 import showClock from './modules/date-time.js';
+import { books } from './modules/main.js';
+import { renderBooks, addBook } from './modules/main.js';
+import {
+  addToList,
+  displayBookList,
+  displayContactInfo,
+} from './modules/toggle-display.js';
+import {
+  addLink,
+  listLink,
+  contactLink,
+  addBtn,
+} from './modules/select-elements.js';
 
-const newBook = new Book();
-window.addEventListener('load', newBook.addBook);
+// Show clock
+showClock(); // Show clock initially
+setInterval(showClock, 1000); // Update the clock and HTML element's content every second
 
-// Show clock initially
-showClock();
+// Display book list
+renderBooks();
+displayBookList();
 
-// Update the clock and HTML element's content every second
-setInterval(showClock, 1000);
+// Toggle display
+addLink.addEventListener('click', addToList);
+listLink.addEventListener('click', displayBookList);
+contactLink.addEventListener('click', displayContactInfo);
+
+// Add book
+addBtn.addEventListener('click', addBook);
