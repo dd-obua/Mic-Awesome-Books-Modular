@@ -2,13 +2,6 @@ import { bookTitle, bookAuthor, listEntry } from './select-elements.js';
 
 export let books = JSON.parse(localStorage.getItem('books')) || [];
 
-// Remove book
-const removeBook = (title, author) => {
-  books = books.filter(book => book.title !== title && book.author !== author);
-  updateStorage();
-  renderBooks();
-};
-
 // Update storage
 const updateStorage = () => {
   localStorage.setItem('books', JSON.stringify(books));
@@ -42,7 +35,13 @@ const renderBooks = () => {
       const card = e.target.closest('.book-card');
       const title = card.querySelector('.book-title').innerText;
       const author = card.querySelector('.book-author').innerText;
-      removeBook(title, author);
+
+      // Remove book
+      books = books.filter(
+        book => book.title !== title && book.author !== author
+      );
+      updateStorage();
+      renderBooks();
     });
   });
 };
